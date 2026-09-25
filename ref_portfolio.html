@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Harishkumaran V - Embedded Systems & UI/UX Developer Portfolio">
+    <title>Harishkumaran V | Embedded IoT & Robotics Engineer</title>
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css?v=7">
+    <link rel="stylesheet" href="css/base.css?v=7">
+    <link rel="stylesheet" href="css/components.css?v=7">
+    <link rel="stylesheet" href="css/layout.css?v=7">
+    <link rel="stylesheet" href="css/animations.css?v=7">
+</head>
+<body data-theme="dark">
+    <!-- Fixed 3D Background -->
+    <canvas id="bg-canvas" class="bg-canvas"></canvas>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header__inner">
+            <a href="#" class="header__logo">
+                <span class="header__logo-mark">HV</span>
+                <span class="sr-only">Harishkumaran V</span>
+            </a>
+            
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li><a href="#about" class="header__nav-link">About</a></li>
+                    <li><a href="#skills" class="header__nav-link">Expertise</a></li>
+                    <li><a href="#projects" class="header__nav-link">Portfolio</a></li>
+                    <li><a href="#experience" class="header__nav-link">Career</a></li>
+                    <li><a href="#contact" class="header__nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="header__actions">
+                    <button class="header__theme-toggle" aria-label="Toggle dark/light mode" id="theme-toggle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                    <a href="#contact" class="btn btn--primary btn--sm">Hire Me</a>
+                    <button class="header__hamburger" aria-label="Menu" aria-expanded="false" id="mobile-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="#about" class="mobile-nav__link">About</a>
+        <a href="#skills" class="mobile-nav__link">Expertise</a>
+        <a href="#projects" class="mobile-nav__link">Portfolio</a>
+        <a href="#experience" class="mobile-nav__link">Career</a>
+        <a href="#contact" class="mobile-nav__link">Contact</a>
+        <a href="assets/resume/Harishkumaran_Resume.pdf" class="btn btn--primary" target="_blank">Download Resume</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container hero__container"><div class="hero__gradient"></div>
+            <div class="hero__grid">
+                <div class="hero__content">
+                    <div class="hero__greeting">Hello, I'm</div>
+                    <h1 class="hero__name"><span class="gradient-text-animated">Harishkumaran V</span></h1>
+                    <div class="hero__tagline">
+                        <span id="typewriter-text"></span>
+                    </div>
+                    
+                    <div class="hero__ctas">
+                        <a href="#contact" class="btn btn--primary btn--lg">Let's Talk</a>
+                        <a href="assets/resume/Harishkumaran_Resume.pdf" class="btn btn--secondary btn--lg" target="_blank" rel="noopener">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero__terminal">
+                    <div class="terminal__header">
+                        <span class="terminal__dot"></span>
+                        <span class="terminal__dot"></span>
+                        <span class="terminal__dot"></span>
+                        <span class="terminal__title">hv_boot_sequence.sh</span>
+                    </div>
+                    <div class="terminal__body" id="terminal-body">
+                        <!-- Boot sequence lines will be injected here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero__scroll-indicator">
+                Scroll to explore
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+        </section>
+
+        <!-- About & Education Section -->
+        <section id="about">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">01. About Me</div>
+                    <h2 class="section-title">Emerging Innovator</h2>
+                </div>
+                
+                <div class="about__grid">
+                    <div class="about__text animate-on-scroll animate-on-scroll--left">
+                        <p>I am an emerging third-year B.Tech student specializing in Electronics and Communication Engineering (ECE), committed to building a strong foundation in both theoretical and practical aspects of my field.</p>
+                        <p>With a dedicated approach to my studies, I aim to deepen my understanding of key concepts such as circuit design, signal processing, and communication systems. I combine hardware engineering with UX-friendly design to build smart solutions.</p>
+                        
+                        <div class="about__info-cards">
+                            <div class="about__info-card hover-lift">
+                                <div class="about__info-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="about__info-label">Phone</div>
+                                    <div class="about__info-value"><a href="tel:+918438953922">+91 8438953922</a></div>
+                                </div>
+                            </div>
+                            <div class="about__info-card hover-lift">
+                                <div class="about__info-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div>
+                                    <div class="about__info-label">Email</div>
+                                    <div class="about__info-value"><a href="mailto:harishkumaran87@gmail.com">harishkumaran87@gmail.com</a></div>
+                                </div>
+                            </div>
+                            <div class="about__info-card hover-lift">
+                                <div class="about__info-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <div>
+                                    <div class="about__info-label">Location</div>
+                                    <div class="about__info-value">Hosur, Tamil Nadu</div>
+                                </div>
+                            </div>
+                            <div class="about__info-card hover-lift">
+                                <div class="about__info-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </div>
+                                <div>
+                                    <div class="about__info-label">LinkedIn</div>
+                                    <div class="about__info-value"><a href="https://linkedin.com/in/vharishkumaran/" target="_blank" rel="noopener">vharishkumaran</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about__photo-wrapper animate-on-scroll animate-on-scroll--right">
+                        <div class="about__photo-glow"></div>
+                        <!-- Profile Photo -->
+                        <div class="about__photo">
+                            <img src="assets/images/profile.jpeg" alt="Harishkumaran V" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+                        </div>
+                        
+                        <div class="about__stats">
+                            <div class="stat-card card card--flat hover-lift" id="cgpa-card" style="cursor: pointer;" title="View Grade Sheets">
+                                <div class="stat-card__value counter" data-target="9.36" data-suffix="">0</div>
+                                <div class="stat-card__label">CGPA</div>
+                            </div>
+                            <a href="#projects" class="stat-card card card--flat hover-lift" style="text-decoration: none; color: inherit; display: block;">
+                                <div class="stat-card__value counter" data-target="8">0</div>
+                                <div class="stat-card__label">Projects</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education section inside About -->
+        <section id="education" style="padding-top: 0;">
+            <div class="container container--narrow">
+                <div class="section-label animate-on-scroll">Education</div>
+                <h3 class="section-title animate-on-scroll">Academic Background</h3>
+                
+                <div class="education__content timeline animate-on-scroll stagger-children">
+                    <div class="timeline-item">
+                        <div class="timeline-item__dot"></div>
+                        <div class="timeline-item__date">2023 - 2027</div>
+                        <h4 class="timeline-item__title">Kalasalingam Academy of Research and Education</h4>
+                        <div class="timeline-item__subtitle">B.Tech - Electronics and Communication Engineering (ECE)</div>
+                        <div class="timeline-item__detail">Embedded IoT Specialization</div>
+                        <span class="badge badge--green timeline-item__badge">9.36 CGPA</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__dot"></div>
+                        <div class="timeline-item__date">2023 - 2027</div>
+                        <h4 class="timeline-item__title">Kalasalingam Academy of Research and Education</h4>
+                        <div class="timeline-item__subtitle">Minor - Aeronautical Engineering</div>
+                        <div class="timeline-item__detail">Unmanned Aerial Vehicle (UAV)</div>
+                        <span class="badge badge--green timeline-item__badge">8.6 CGPA</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__dot"></div>
+                        <div class="timeline-item__date">2022 - 2023</div>
+                        <h4 class="timeline-item__title">Maharishi Vidya Mandir School, Hosur</h4>
+                        <div class="timeline-item__subtitle">Senior Secondary Certificate</div>
+                        <span class="badge badge--green timeline-item__badge">8.1 CGPA</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__dot"></div>
+                        <div class="timeline-item__date">2019 - 2022</div>
+                        <h4 class="timeline-item__title">The Titan School, Hosur</h4>
+                        <div class="timeline-item__subtitle">Higher Secondary Certificate</div>
+                        <span class="badge badge--green timeline-item__badge">8.1 CGPA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">02. Expertise</div>
+                    <h2 class="section-title">Technical & Soft Skills</h2>
+                </div>
+                
+                <div class="skills__grid">
+                    <div class="skills__technical animate-on-scroll animate-on-scroll--left">
+                        <h3 class="mb-4" style="margin-bottom: var(--space-6);">Technical Proficiencies</h3>
+                        
+                        <div class="skills__bars" id="skills-bars">
+                            <div class="skill-bar">
+                                <div class="skill-bar__header">
+                                    <span class="skill-bar__name">IoT Systems</span>
+                                    <span class="skill-bar__percent">85%</span>
+                                </div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="85%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar__header">
+                                    <span class="skill-bar__name">Cloud Integration</span>
+                                    <span class="skill-bar__percent">84%</span>
+                                </div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="84%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar__header">
+                                    <span class="skill-bar__name">MATLAB Skills</span>
+                                    <span class="skill-bar__percent">80%</span>
+                                </div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="80%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar__header">
+                                    <span class="skill-bar__name">Automation</span>
+                                    <span class="skill-bar__percent">80%</span>
+                                </div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="80%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar__header">
+                                    <span class="skill-bar__name">Python Development</span>
+                                    <span class="skill-bar__percent">78%</span>
+                                </div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="78%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar__header">
+                                    <span class="skill-bar__name">Robotics</span>
+                                    <span class="skill-bar__percent">68%</span>
+                                </div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="68%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar__header">
+                                    <span class="skill-bar__name">PCB Design</span>
+                                    <span class="skill-bar__percent">66%</span>
+                                </div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="66%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar__header">
+                                    <span class="skill-bar__name">UI/UX Design</span>
+                                    <span class="skill-bar__percent">64%</span>
+                                </div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="64%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar__header">
+                                    <span class="skill-bar__name">STM Integration</span>
+                                    <span class="skill-bar__percent">58%</span>
+                                </div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="58%"></div></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skills__tech-tags">
+                            <span class="badge">ESP-IDF</span>
+                            <span class="badge">Peripheral Interfacing</span>
+                            <span class="badge">Data Logging</span>
+                            <span class="badge">Digital Circuit Design</span>
+                            <span class="badge">Signal Processing</span>
+                            <span class="badge">Embedded C/C++</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skills__certifications animate-on-scroll animate-on-scroll--right">
+                        <h3 class="mb-4" style="margin-bottom: var(--space-6);">Seminars & Workshops</h3>
+                        
+                        <div class="certifications__list stagger-children animate-on-scroll">
+                            <div class="cert-item hover-lift">
+                                <div class="cert-item__icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                                </div>
+                                <div class="cert-item__name">Printed Circuit Board Design & Analysis<br><span style="font-size: var(--fs-xs); color: var(--text-tertiary);">Ramco Institute of Technology</span></div>
+                                <div class="cert-item__date">Feb 2025</div>
+                            </div>
+                            <div class="cert-item hover-lift">
+                                <div class="cert-item__icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                                </div>
+                                <div class="cert-item__name">Drone Technologies - Exploring the Skies<br><span style="font-size: var(--fs-xs); color: var(--text-tertiary);">Kalasalingam Academy of Research</span></div>
+                                <div class="cert-item__date">Sep 2024</div>
+                            </div>
+                            <div class="cert-item hover-lift">
+                                <div class="cert-item__icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                                </div>
+                                <div class="cert-item__name">Remote Pilot Training Program<br><span style="font-size: var(--fs-xs); color: var(--text-tertiary);">Dhaksha Unmanned Systems</span></div>
+                                <div class="cert-item__date">Aug 2024</div>
+                            </div>
+                        </div>
+
+                        <h3 class="mb-4" style="margin-bottom: var(--space-6); margin-top: var(--space-8);">Certifications</h3>
+                        <div class="certifications__list stagger-children animate-on-scroll">
+                            <div class="cert-item hover-lift">
+                                <div class="cert-item__icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                </div>
+                                <div class="cert-item__name">7x MATLAB Specialized Certifications<br><span style="font-size: var(--fs-xs); color: var(--text-tertiary);">Linear Algebra, ODEs, Signal/Image Processing, Fundamentals</span></div>
+                                <div class="cert-item__date">2023-25</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">03. Portfolio</div>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">A showcase of embedded hardware, UI/UX, and IoT solutions driven by data and impactful design.</p>
+                </div>
+                
+                <div class="search-wrapper animate-on-scroll">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="project-search" class="search-input" placeholder="Search projects by name or technology..." aria-label="Search projects">
+                </div>
+                
+                <div class="filter-bar animate-on-scroll" id="project-filters">
+                    <button class="filter-btn is-active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="iot">IoT Systems</button>
+                    <button class="filter-btn" data-filter="hardware">Hardware</button>
+                    <button class="filter-btn" data-filter="uiux">UI/UX & Web</button>
+                    <button class="filter-btn" data-filter="software">Software</button>
+                </div>
+                
+                <div class="projects__grid animate-on-scroll stagger-children" id="projects-grid">
+                    <!-- Project Cards will be injected by projects.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">04. Career</div>
+                    <h2 class="section-title">Work Experience</h2>
+                </div>
+                
+                <div class="experience__card card hover-lift animate-on-scroll">
+                    <div class="experience__header">
+                        <div class="experience__logo">
+                            <img src="assets/images/titan_logo.png" alt="Titan Company Limited" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <div class="experience__details">
+                            <h3>Intern – Watch Division</h3>
+                            <h4 style="color: var(--text-primary); font-weight: 500;">Titan Company Limited</h4>
+                        </div>
+                    </div>
+                    <div class="experience__meta">
+                        <span class="experience__meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            May 12 – June 12, 2025
+                        </span>
+                        <span class="experience__meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Tool Room, Maintenance, and R&D
+                        </span>
+                    </div>
+                    <ul class="experience__list mt-4">
+                        <li>Gained hands-on exposure to electrical systems of advanced machines such as ESSA 15T, Bruderer BSTA 200-60, and MIKRON HEM 1000.</li>
+                        <li>Troubleshot and maintained high-speed servo motors and control circuits.</li>
+                        <li>Designed and implemented automation systems using PLCs and image processing.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Publications & Achievements Section -->
+        <section id="achievements-section" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header animate-on-scroll mt-12">
+                    <div class="section-label">05. Recognition</div>
+                    <h2 class="section-title">Publications & Achievements</h2>
+                </div>
+                
+                <h3 class="text-center mb-6" style="margin-bottom: var(--space-6); text-align: center;">Publications & Patents</h3>
+                <div class="publications__grid animate-on-scroll stagger-children mb-12" style="margin-bottom: var(--space-12);">
+                    <div class="publication-card card card--flat hover-lift">
+                        <div class="publication-card__type">Patent Filed (March 2026)</div>
+                        <h4 class="publication-card__title">"PyroSentinel: AI-Powered LoRa-Based Low Power Forest Fire Early Detection and Intelligent Communication System"</h4>
+                        <p class="publication-card__desc">Designed and developed an ESP32 and LoRa-based intelligent forest fire detection system with multi-sensor fusion and AI-driven fire prediction.</p>
+                    </div>
+                    <div class="publication-card card card--flat hover-lift">
+                        <div class="publication-card__type">Conference Proceeding</div>
+                        <h4 class="publication-card__title">"IntelliLift: Real-Time Occupancy Detection and Boarding Suggestions"</h4>
+                        <p class="publication-card__desc">Presented at FOSGRIE 2026 Conference, Thiagarajar School of Management. Paper published in Scopus Indexed Conference Proceedings, focusing on smart elevator occupancy detection using IoT and AI-based vision systems.</p>
+                    </div>
+                </div>
+                
+                <h3 class="text-center mb-6" style="margin-bottom: var(--space-6); text-align: center;">Achievements</h3>
+                <div class="achievements__grid animate-on-scroll stagger-children">
+                    <div class="achievement-card card card--flat hover-lift">
+                        <div class="achievement-card__icon">🏆</div>
+                        <div>
+                            <h4 class="achievement-card__title">CUBE XTREME</h4>
+                            <p class="achievement-card__desc">1st Place Winner</p>
+                        </div>
+                    </div>
+                    <div class="achievement-card card card--flat hover-lift">
+                        <div class="achievement-card__icon">🥇</div>
+                        <div>
+                            <h4 class="achievement-card__title">EDUAITHON</h4>
+                            <p class="achievement-card__desc">Winner</p>
+                        </div>
+                    </div>
+                    <div class="achievement-card card card--flat hover-lift">
+                        <div class="achievement-card__icon">💼</div>
+                        <div>
+                            <h4 class="achievement-card__title">ACM SIGBED</h4>
+                            <p class="achievement-card__desc">Treasurer</p>
+                        </div>
+                    </div>
+                    <div class="achievement-card card card--flat hover-lift">
+                        <div class="achievement-card__icon">📅</div>
+                        <div>
+                            <h4 class="achievement-card__title">DIGICON</h4>
+                            <p class="achievement-card__desc">Event Coordinator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">06. Get in Touch</div>
+                    <h2 class="section-title">Let's Build Something Together</h2>
+                    <p class="section-subtitle">Currently exploring new opportunities in Embedded Systems, IoT, and Robotics. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+                </div>
+                
+                <div class="contact__grid">
+                    <div class="contact__info animate-on-scroll animate-on-scroll--left">
+                        <h3 class="contact__info-title">Contact Information</h3>
+                        <p class="contact__info-text">Feel free to reach out to me via email or through my social media channels. I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                        
+                        <div class="contact__channels">
+                            <a href="mailto:harishkumaran87@gmail.com" class="contact__channel hover-lift">
+                                <div class="contact__channel-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <span>harishkumaran87@gmail.com</span>
+                            </a>
+                            <a href="tel:+918438953922" class="contact__channel hover-lift">
+                                <div class="contact__channel-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <span>+91 8438953922</span>
+                            </a>
+                            <div class="contact__channel hover-lift" style="cursor: default;">
+                                <div class="contact__channel-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <span>6-32, Titan Township, Mathigiri, Hosur 635110</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__socials">
+                            <a href="https://linkedin.com/in/vharishkumaran/" target="_blank" rel="noopener" class="contact__social-link hover-lift" aria-label="LinkedIn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener" class="contact__social-link hover-lift" aria-label="GitHub">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact__form-wrapper card hover-glow animate-on-scroll animate-on-scroll--right">
+                        <!-- We use action="https://formspree.io/f/YOUR_ID_HERE" when ready -->
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                                <span class="form-error">Please enter your name</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+                                <span class="form-error">Please enter a valid email address</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-input" placeholder="Project Inquiry">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="form-textarea" placeholder="Hello Harishkumaran, I'd like to discuss..." required></textarea>
+                                <span class="form-error">Please enter your message</span>
+                            </div>
+                            
+                            <!-- Honeypot -->
+                            <input type="text" name="_gotcha" style="display:none">
+                            
+                            <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">
+                                <span>Send Message</span>
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="footer__brand-name">Harishkumaran V</div>
+                    <p class="footer__brand-desc">Emerging third-year B.Tech student specializing in Electronics and Communication Engineering (ECE), building smart hardware solutions with UX-friendly design.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer__heading">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="#about" class="footer__link">About Me</a></li>
+                        <li><a href="#projects" class="footer__link">Portfolio</a></li>
+                        <li><a href="#experience" class="footer__link">Experience</a></li>
+                        <li><a href="assets/resume/Harishkumaran_Resume.pdf" class="footer__link" target="_blank">Resume PDF</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer__heading">Connect</h4>
+                    <ul class="footer__links">
+                        <li><a href="https://linkedin.com/in/vharishkumaran/" class="footer__link" target="_blank" rel="noopener">LinkedIn</a></li>
+                        <li><a href="#" class="footer__link" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="mailto:harishkumaran87@gmail.com" class="footer__link">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__copyright">
+                    &copy; <span id="current-year"></span> Harishkumaran V. All rights reserved.
+                </div>
+                <div class="footer__socials">
+                    <a href="https://linkedin.com/in/vharishkumaran/" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- Project Details Modal -->
+    <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog">
+        <div class="modal" role="document">
+            <button class="modal__close" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal__content" id="modal-content">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="alert" aria-live="assertive">
+        <!-- Content injected via JS -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/theme.js?v=11"></script>
+    <script src="js/projects.js?v=13"></script>
+    <script src="js/skills.js?v=11"></script>
+    <script src="js/animations.js?v=11"></script>
+    <script src="js/contact.js?v=11"></script>
+    <script src="js/three-scene.js?v=11"></script>
+    <script src="js/main.js?v=11"></script>
+</body>
+</html>
