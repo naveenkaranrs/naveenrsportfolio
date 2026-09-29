@@ -1,0 +1,520 @@
+/* ====================================================
+   05. RECOGNITION — MISSION CONTROL & ENGINEERING METRICS
+   Terminal / Aerospace Command Center Theme
+   Font Family Tokens:
+     --font-heading: 'Share Tech Mono', monospace
+     --font-mono: 'JetBrains Mono', monospace
+     --font-body: 'Inter', sans-serif
+   ==================================================== */
+
+.mission-control-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-10);
+}
+
+@media (max-width: 960px) {
+  .mission-control-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+/* Command Center Card Container */
+.mission-card {
+  background: var(--bg-card, rgba(18, 19, 24, 0.85));
+  border: 1px solid rgba(0, 255, 102, 0.2);
+  border-radius: var(--radius-md, 10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mission-card:hover {
+  border-color: rgba(0, 255, 102, 0.5);
+  box-shadow: 0 12px 40px rgba(0, 255, 102, 0.12), 0 0 20px rgba(0, 255, 102, 0.08);
+  transform: translateY(-3px);
+}
+
+/* Top Terminal Chrome Header Bar */
+.mission-card__terminal-bar {
+  background: rgba(10, 11, 14, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  user-select: none;
+}
+
+.mission-card__terminal-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mission-card__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.mission-card__dot--red {
+  background: #ff5f56;
+  box-shadow: 0 0 6px rgba(255, 95, 86, 0.4);
+}
+
+.mission-card__dot--yellow {
+  background: #ffbd2e;
+  box-shadow: 0 0 6px rgba(255, 189, 46, 0.4);
+}
+
+.mission-card__dot--green {
+  background: #27c93f;
+  box-shadow: 0 0 6px rgba(39, 201, 63, 0.4);
+}
+
+.mission-card__terminal-title {
+  color: var(--text-tertiary, #6b7586);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.mission-card__terminal-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.7rem;
+  color: var(--accent-primary, #00ff66);
+  letter-spacing: 0.05em;
+}
+
+.mission-card__status-beacon {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-primary, #00ff66);
+  box-shadow: 0 0 8px var(--accent-primary, #00ff66);
+  animation: beacon-pulse 2s infinite ease-in-out;
+}
+
+.mission-card__status-beacon--cyan {
+  background: var(--accent-tertiary, #00bfff);
+  box-shadow: 0 0 8px var(--accent-tertiary, #00bfff);
+}
+
+.mission-card__status-beacon--amber {
+  background: #ffab40;
+  box-shadow: 0 0 8px #ffab40;
+}
+
+@keyframes beacon-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+/* Card Body */
+.mission-card__body {
+  padding: var(--space-6, 24px);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Sub-Badge */
+.mission-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: var(--space-3, 12px);
+  background: rgba(0, 255, 102, 0.08);
+  border: 1px solid rgba(0, 255, 102, 0.3);
+  color: var(--accent-primary, #00ff66);
+}
+
+.mission-card__badge--tertiary {
+  background: rgba(0, 191, 255, 0.08);
+  border-color: rgba(0, 191, 255, 0.3);
+  color: var(--accent-tertiary, #00bfff);
+}
+
+.mission-card__badge--secondary {
+  background: rgba(212, 175, 55, 0.08);
+  border-color: rgba(212, 175, 55, 0.3);
+  color: var(--accent-secondary, #d4af37);
+}
+
+/* Main Title & Subtitle */
+.mission-card__heading {
+  font-family: var(--font-heading, 'Share Tech Mono', monospace);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mission-card__subtext {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.85rem;
+  color: var(--text-secondary, #9aa4b5);
+  margin-bottom: var(--space-5, 20px);
+  line-height: 1.5;
+}
+
+/* Statistics Lines (Plain Text style with monospace typography) */
+.mission-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: var(--space-5, 20px);
+}
+
+.mission-stat-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.88rem;
+  color: var(--text-primary, #e0e6ed);
+  transition: all 0.2s ease;
+}
+
+.mission-stat-row:hover {
+  background: rgba(0, 255, 102, 0.05);
+  border-color: rgba(0, 255, 102, 0.25);
+  transform: translateX(4px);
+}
+
+.mission-stat-check {
+  font-size: 1rem;
+  color: var(--accent-primary, #00ff66);
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 5px rgba(0, 255, 102, 0.5));
+}
+
+.mission-stat-text {
+  flex: 1;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Mission Log Items */
+.mission-log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: var(--space-5, 20px);
+}
+
+.mission-log-item {
+  padding: 12px 14px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.mission-log-item:hover {
+  background: rgba(0, 191, 255, 0.04);
+  border-color: rgba(0, 191, 255, 0.3);
+  transform: translateX(4px);
+}
+
+.mission-log-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mission-id {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-tertiary, #00bfff);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mission-status-pill {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mission-status--success {
+  background: rgba(0, 255, 102, 0.12);
+  border: 1px solid rgba(0, 255, 102, 0.4);
+  color: #00ff66;
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
+}
+
+.mission-status--deployed {
+  background: rgba(0, 191, 255, 0.12);
+  border: 1px solid rgba(0, 191, 255, 0.4);
+  color: #00bfff;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+}
+
+.mission-status--active {
+  background: rgba(255, 171, 64, 0.12);
+  border: 1px solid rgba(255, 171, 64, 0.4);
+  color: #ffab40;
+  box-shadow: 0 0 10px rgba(255, 171, 64, 0.2);
+}
+
+.mission-name {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.mission-desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8rem;
+  color: var(--text-secondary, #9aa4b5);
+  line-height: 1.5;
+}
+
+/* Future Missions / Roadmap List */
+.mission-roadmap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: var(--space-5, 20px);
+}
+
+.mission-roadmap-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 9px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.mission-roadmap-item:hover {
+  background: rgba(212, 175, 55, 0.06);
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateX(4px);
+}
+
+.mission-roadmap-item.is-checked {
+  background: rgba(0, 255, 102, 0.06);
+  border-color: rgba(0, 255, 102, 0.35);
+}
+
+.mission-roadmap-box {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 1.1rem;
+  color: var(--accent-secondary, #d4af37);
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: all 0.2s ease;
+}
+
+.mission-roadmap-item.is-checked .mission-roadmap-box {
+  color: var(--accent-primary, #00ff66);
+  filter: drop-shadow(0 0 5px rgba(0, 255, 102, 0.6));
+}
+
+.mission-roadmap-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mission-roadmap-text {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-primary, #e0e6ed);
+}
+
+.mission-roadmap-sub {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.76rem;
+  color: var(--text-tertiary, #6b7586);
+}
+
+/* "Show more lines" High-Tech Terminal Button */
+.mission-toggle-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 255, 102, 0.05);
+  border: 1px dashed rgba(0, 255, 102, 0.35);
+  color: var(--accent-primary, #00ff66);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mission-toggle-btn:hover {
+  background: rgba(0, 255, 102, 0.15);
+  border-color: var(--accent-primary, #00ff66);
+  box-shadow: 0 0 12px rgba(0, 255, 102, 0.25);
+  transform: translateY(-1px);
+}
+
+.mission-toggle-btn--tertiary {
+  background: rgba(0, 191, 255, 0.05);
+  border-color: rgba(0, 191, 255, 0.35);
+  color: var(--accent-tertiary, #00bfff);
+}
+
+.mission-toggle-btn--tertiary:hover {
+  background: rgba(0, 191, 255, 0.15);
+  border-color: var(--accent-tertiary, #00bfff);
+  box-shadow: 0 0 12px rgba(0, 191, 255, 0.25);
+}
+
+.mission-toggle-btn--gold {
+  background: rgba(212, 175, 55, 0.05);
+  border-color: rgba(212, 175, 55, 0.35);
+  color: var(--accent-secondary, #d4af37);
+}
+
+.mission-toggle-btn--gold:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--accent-secondary, #d4af37);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+}
+
+/* Command Center Philosophy Banner at Section Bottom */
+.mission-philosophy-banner {
+  background: linear-gradient(135deg, rgba(18, 19, 24, 0.95) 0%, rgba(26, 28, 35, 0.95) 100%);
+  border: 1px solid rgba(0, 255, 102, 0.25);
+  border-left: 4px solid var(--accent-primary, #00ff66);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-6, 24px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-philosophy-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background: radial-gradient(circle at right, rgba(0, 255, 102, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.mission-philosophy-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.mission-philosophy-tag {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-secondary, #d4af37);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mission-philosophy-title {
+  font-family: var(--font-heading, 'Share Tech Mono', monospace);
+  font-size: 1.15rem;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.mission-philosophy-quote {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.9rem;
+  color: var(--text-secondary, #9aa4b5);
+  line-height: 1.6;
+  margin-bottom: var(--space-4, 16px);
+}
+
+.mission-telemetry-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-top: 14px;
+}
+
+.mission-telemetry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+  color: var(--accent-primary, #00ff66);
+  background: rgba(0, 255, 102, 0.06);
+  border: 1px solid rgba(0, 255, 102, 0.2);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
