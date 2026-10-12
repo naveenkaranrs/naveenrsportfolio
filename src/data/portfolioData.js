@@ -5,7 +5,6 @@ export const personalInfo = {
   title: "Embedded Firmware Engineer | ARM Cortex-M Specialist",
   tagline: "Bridging bare-metal silicon, real-time operating systems, and intelligent edge nodes.",
   email: "naveenrs2005@gmail.com",
-  phone: "+91 7373373721",
   linkedin: "https://www.linkedin.com/in/naveenkaran2005",
   linkedinHandle: "naveenkaran2005",
   github: "https://github.com/naveenkaranrs",
